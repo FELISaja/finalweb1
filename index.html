@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME - Wingscorp</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="images\wings_logo.png" />
+    <style>
+      /* Mobile menu toggle */
+      #menu {
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+        max-height: 0;
+      }
+
+      #menu.active {
+        max-height: 300px;
+      }
+
+      /* carousel  */
+      .carousel-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .carousel-item {
+        height: 500px;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-item {
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .carousel-item {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <!-- Navigation bar -->
+    <header class="bg-gray-100 sticky top-0 z-10">
+      <div class="container mx-auto flex items-center justify-between py-4">
+        <a href="index.html" class="flex items-center">
+          <img src="images\wings_logo.png" alt="Wings Logo" class="h-8" />
+        </a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-red-500">HOME</a>
+          <a href="https://fti.unai.edu" target="_blank" class="hover:text-red-500">FTI UNAI</a>
+          <a href="https://unai.edu" target="_blank" class="hover:text-red-500">UNAI WEBSITE</a>
+          <a href="biodata.html" class="hover:text-red-500">BIODATA</a>
+          <a href="posts.html" class="hover:text-red-500">POSTS</a>
+          <a href="contact.html" class="hover:text-red-500">CONTACT US</a>
+          <a href="games.html" class="hover:text-red-500">GAMES</a>
+        </nav>
+        <button class="md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav hidden bg-gray-200">
+      <nav class="flex flex-col space-y-4 p-4">
+        <a href="index.html" class="text-red-500">HOME</a>
+        <a href="https://fti.unai.edu" target="_blank" class="hover:text-red-500">FTI UNAI</a>
+        <a href="https://unai.edu" target="_blank" class="hover:text-red-500">UNAI WEBSITE</a>
+        <a href="biodata.html" class="hover:text-red-500">BIODATA</a>
+        <a href="posts.html" class="hover:text-red-500">POSTS</a>
+        <a href="contact.html" class="hover:text-red-500">CONTACT US</a>
+        <a href="games.html" class="hover:text-red-500">GAMES</a>
+      </nav>
+    </div>
+
+    <script>
+      const button = document.querySelector("button");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      button.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Full-Screen Image -->
+    <!-- gallery -->
+    <div id="carouselExampleControls" class="relative" data-carousel="fade">
+      <!--Carousel items-->
+      <div class="relative w-full overflow-hidden">
+        <!--First item-->
+        <div class="carousel-item active relative w-full transition-opacity duration-600 ease-in-out opacity-100">
+          <img src="images\gallery1.jpg" class="carousel-image block w-full" alt="gallery1" />
+        </div>
+        <!--Second item-->
+        <div class="carousel-item relative w-full transition-opacity duration-600 ease-in-out opacity-0 hidden">
+          <img src="images\gallery2.jpg" class="carousel-image block w-full" alt="gallery2" />
+        </div>
+      </div>
+
+      <!--Carousel controls - prev item-->
+      <button
+        class="carousel-control-prev absolute bottom-0 left-0 top-0 z-10 flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-in-out hover:opacity-90 focus:outline-none"
+        type="button"
+        id="prevBtn"
+      >
+        <span class="inline-block h-8 w-8">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </span>
+      </button>
+
+      <!--Carousel controls - next item-->
+      <button
+        class="carousel-control-next absolute bottom-0 right-0 top-0 z-10 flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-in-out hover:opacity-90 focus:outline-none"
+        type="button"
+        id="nextBtn"
+      >
+        <span class="inline-block h-8 w-8">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <script>
+      // JavaScript for fade effect carousel functionality
+
+      const items = document.querySelectorAll(".carousel-item");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      let currentIndex = 0; // Start at the first item
+
+      // Function to show the current item and hide others
+      function showItem(index) {
+        items.forEach((item, i) => {
+          if (i === index) {
+            item.classList.add("active");
+            item.classList.remove("hidden");
+            item.style.opacity = "1"; // Fade in current item
+          } else {
+            item.classList.remove("active");
+            item.classList.add("hidden");
+            item.style.opacity = "0"; // Fade out non-active items
+          }
+        });
+      }
+
+      // Function to go to the next item
+      function nextItem() {
+        currentIndex = (currentIndex + 1) % items.length; // Loop to the first item
+        showItem(currentIndex);
+      }
+
+      // Function to go to the previous item
+      function prevItem() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length; // Loop to the last item
+        showItem(currentIndex);
+      }
+
+      // Event listeners for carousel controls
+      nextBtn.addEventListener("click", nextItem);
+      prevBtn.addEventListener("click", prevItem);
+
+      // Auto-slide every 5 seconds
+      setInterval(nextItem, 5000);
+
+      // Initialize the first item
+      showItem(currentIndex);
+    </script>
+
+    <!-- Content Section -->
+    <div class="px-6 py-8">
+      <div class="text-center">
+        <h2 class="text-2xl font-bold">BRAND KAMI</h2>
+        <p class="mt-4 text-gray-600">
+          Kini Wings dikenal sebagai salah satu perusahaan lokal terkemuka yang memproduksi dan mendistribusikan berbagai produk kebutuhan rumah tangga, perawatan kain, perawatan diri, makanan dan minuman. Wings terus berusaha untuk dapat
+          menjalankan visi perusahaan yang berbunyi “semua hal baik di kehidupan harus bisa dinikmati oleh setiap orang” agar dapat terus memperbaiki kualitas kehidupan konsumen Indonesia dengan produk-produk berkualitas.
+        </p>
+      </div>
+
+      <!-- Carousel -->
+      <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <a href="https://wingscorp.com/brand-detail/ale-ale/" class="text-center">
+          <img class="w-24 mx-auto" src="https://wingscorp.com/wp-content/uploads/2020/10/Logo-Ale-Ale.png" alt="Ale-Ale" />
+          <p class="mt-2 text-sm font-medium">ALE-ALE</p>
+        </a>
+        <a href="https://wingscorp.com/brand-detail/chocodrink/" class="text-center">
+          <img class="w-24 mx-auto" src="https://wingscorp.com/wp-content/uploads/2020/11/Logo-ChocoDrink.png" alt="ChocoDrink" />
+          <p class="mt-2 text-sm font-medium">ChocoDrink</p>
+        </a>
+        <a href="https://wingscorp.com/brand-detail/ekonomi-power-liquid/" class="text-center">
+          <img class="w-24 mx-auto" src="https://wingscorp.com/wp-content/uploads/2020/11/Ekonomi-Liquid.png" alt="Ekonomi Power Liquid" />
+          <p class="mt-2 text-sm font-medium">Ekonomi Power Liquid</p>
+        </a>
+        <a href="https://wingscorp.com/brand-detail/floridina/" class="text-center">
+          <img class="w-24 mx-auto" src="https://wingscorp.com/wp-content/uploads/2020/11/Logo-Floridina.png" alt="Floridina" />
+          <p class="mt-2 text-sm font-medium">Floridina</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- News Section -->
+    <section class="px-6 py-8 bg-gray-50">
+      <h1 class="text-center text-xl font-bold mb-6">BERITA & KEGIATAN</h1>
+      <div class="grid gap-6 sm:grid-cols-3">
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <img class="w-full h-40 object-cover" src="images\news1.jpeg" alt="News 1" />
+          <h2 class="p-4 text-sm font-semibold">Daia Deterjen Manjakan Konsumen dengan #DAIAMudikAsyik!</h2>
+        </div>
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <img class="w-full h-40 object-cover" src="images\news2.jpeg" alt="News 2" />
+          <h2 class="p-4 text-sm font-semibold">“SoKlin Softener Berbagi Kelembutan” Ajak 200 Anak Berani Bermimpi</h2>
+        </div>
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <img class="w-full h-40 object-cover" src="images\news3.jpeg" alt="News 3" />
+          <h2 class="p-4 text-sm font-semibold">Hers Protex Ajak Orang Tua Dampingi Remaja Menjalani Masa Pubertas</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="relative py-16" style="background-image: url('images/join_us.jpg'); background-size: cover; background-position: left center">
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <!-- Overlay to darken the image -->
+      <div class="relative max-w-md mx-auto z-10 text-center">
+        <h1 class="text-2xl font-bold text-white">JADILAH BAGIAN DARI KAMI</h1>
+        <p class="mt-4 text-white">
+          After its success to become one of the biggest players in FMCG market in Indonesia, the enterprise decided to spread their wings worldwide. Currently Wings’s products has become market leader in over 60 countries around the world.
+        </p>
+        <a href="#join" class="mt-6 inline-block px-8 py-3 text-white bg-red-500 hover:bg-red-600 rounded-full"> See Job Opportunities </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-900 text-sm">
+      <div class="px-6 py-8 flex flex-wrap gap-6">
+        <!-- HEAD OFFICE -->
+        <div class="flex-1 min-w-[250px]">
+          <h3 class="text-lg font-bold">HEAD OFFICE</h3>
+          <p class="mt-2 text-red-500">Jakarta</p>
+          <p>Jl. Tipar Cakung Kav. F 5-7, Cakung Barat, Cakung, Jakarta Timur 13910</p>
+          <p>Phone: 021 4602696</p>
+        </div>
+
+        <!-- Empty Column -->
+        <div class="flex-1 min-w-[250px]">
+          <br />
+          <h3 class="text-lg font-bold"></h3>
+          <p class="mt-2 text-red-500">Surabaya</p>
+          <p>Jl. Embong Malang No.61-65</p>
+          <p>Gedung Ekonomi Lt.7</p>
+          <p>Surabaya 60261</p>
+        </div>
+
+        <!-- LAYANAN KONSUMEN -->
+        <div class="flex-1 min-w-[250px]">
+          <h3 class="text-lg font-bold">Layanan Konsumen</h3>
+          <br />
+          <p>PO BOX PT WINGS SURYA 60012</p>
+          <p>Surabaya - Indonesia</p>
+          <p>0-800-18-18-818 Bebas Pulsa</p>
+          <p>031-5325005 Pengguna Handphone</p>
+        </div>
+      </div>
+
+      <!-- Footer Copyright -->
+      <div class="bg-white py-4 text-gray-900 text-center">
+        <p>WINGS GROUP © COPYRIGHT 2016. ALL RIGHTS RESERVED. PRIVACY POLICY.</p>
+      </div>
+    </footer>
+  </body>
+</html>

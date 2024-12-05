@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIODATAA- Wingscorp</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="images\wings_logo.png" />
+    <style>
+      /* Mobile menu toggle */
+      #menu {
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+        max-height: 0;
+      }
+
+      #menu.active {
+        max-height: 300px; /* Adjust based on content */
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <!-- Navigation bar -->
+    <header class="bg-gray-100 sticky top-0 z-10">
+      <div class="container mx-auto flex items-center justify-between py-4">
+        <a href="index.html" class="flex items-center">
+          <img src="images\wings_logo.png" alt="Wings Logo" class="h-8" />
+        </a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-red-500">HOME</a>
+          <a href="https://fti.unai.edu" target="_blank" class="hover:text-red-500">FTI UNAI</a>
+          <a href="https://unai.edu" target="_blank" class="hover:text-red-500">UNAI WEBSITE</a>
+          <a href="biodata.html" class="text-red-500">BIODATA</a>
+          <a href="posts.html" class="hover:text-red-500">POSTS</a>
+          <a href="contact.html" class="hover:text-red-500">CONTACT US</a>
+          <a href="games.html" class="hover:text-red-500">GAMES</a>
+        </nav>
+        <button class="md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav hidden bg-gray-200">
+      <nav class="flex flex-col space-y-4 p-4">
+        <a href="index.html" class="hover:text-red-500">HOME</a>
+        <a href="https://fti.unai.edu" target="_blank" class="hover:text-red-500">FTI UNAI</a>
+        <a href="https://unai.edu" target="_blank" class="hover:text-red-500">UNAI WEBSITE</a>
+        <a href="biodata.html" class="text-red-500">BIODATA</a>
+        <a href="posts.html" class="hover:text-red-500">POSTS</a>
+        <a href="contact.html" class="hover:text-red-500">CONTACT US</a>
+        <a href="games.html" class="hover:text-red-500">GAMES</a>
+      </nav>
+    </div>
+
+    <script>
+      const button = document.querySelector("button");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      button.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Biodata section -->
+    <section class="bg-white">
+      <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+          <div class="max-w-lg">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">My biodata</h2>
+            <p class="mt-4 text-gray-600 text-lg">
+              <strong>Name:</strong> Felicia Anastasya Ketaren<br />
+              <strong>Location:</strong> Medan, Indonesia<br />
+              <strong>Email:</strong> <a href="mailto:felicia.anastasya24@gmail.com" class="text-blue-500 hover:text-blue-600">felicia.anastasya24@gmail.com</a><br />
+              <strong>Phone:</strong> +62 85261753815<br /><br />
+
+              <strong>About Me:</strong> I just want to live like a jellyfish – no heart, just blubub blubub.<br /><br />
+
+              <strong>My Experience in Learning Web Development:</strong><br />
+              <strong>What I like:</strong> I love the challenge of turning ideas into functional, well-designed websites. The mix of creativity and problem-solving, along with the instant feedback of seeing my code come to life on the
+              screen, is incredibly rewarding. Learning new technologies and improving my skills to build more efficient and responsive websites is something that keeps me motivated and excited.<br /><br />
+
+              <strong>What I don't like:</strong> Keeping up with constantly changing technologies can be overwhelming. Debugging and tracking down hard-to-find errors can be frustrating and time-consuming, but it’s always a learning
+              opportunity.
+            </p>
+          </div>
+          <div class="mt-12 md:mt-0">
+            <img src="images\biodata.jpg" alt="my photo profile" class="object-cover rounded-lg shadow-md" width="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-900 text-sm">
+      <div class="px-6 py-8 flex flex-wrap gap-6">
+        <!-- HEAD OFFICE -->
+        <div class="flex-1 min-w-[250px]">
+          <h3 class="text-lg font-bold">HEAD OFFICE</h3>
+          <p class="mt-2 text-red-500">Jakarta</p>
+          <p>Jl. Tipar Cakung Kav. F 5-7, Cakung Barat, Cakung, Jakarta Timur 13910</p>
+          <p>Phone: 021 4602696</p>
+        </div>
+
+        <!-- Empty Column -->
+        <div class="flex-1 min-w-[250px]">
+          <br />
+          <h3 class="text-lg font-bold"></h3>
+          <p class="mt-2 text-red-500">Surabaya</p>
+          <p>Jl. Embong Malang No.61-65</p>
+          <p>Gedung Ekonomi Lt.7</p>
+          <p>Surabaya 60261</p>
+        </div>
+
+        <!-- LAYANAN KONSUMEN -->
+        <div class="flex-1 min-w-[250px]">
+          <h3 class="text-lg font-bold">Layanan Konsumen</h3>
+          <br />
+          <p>PO BOX PT WINGS SURYA 60012</p>
+          <p>Surabaya - Indonesia</p>
+          <p>0-800-18-18-818 Bebas Pulsa</p>
+          <p>031-5325005 Pengguna Handphone</p>
+        </div>
+      </div>
+
+      <!-- Footer Copyright -->
+      <div class="bg-white py-4 text-gray-900 text-center">
+        <p>WINGS GROUP © COPYRIGHT 2016. ALL RIGHTS RESERVED. PRIVACY POLICY.</p>
+      </div>
+    </footer>
+  </body>
+</html>
